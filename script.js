@@ -40,3 +40,38 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 };
+
+function playGame() {
+
+    let playerScore = 0;
+    let computerScore = 0;
+    
+    for (let i = 0; i < 5; i++) {
+        
+        let computerChoice = getComputerChoice();
+        let playerChoice = prompt("What would you like to choose?");
+
+        let roundResult = playRound(playerChoice, computerChoice)
+
+        if (roundResult.includes("win")) {
+            console.log(roundResult)
+            playerScore++
+        }
+        else if (roundResult.includes("lose")) {
+            console.log(roundResult)
+            computerScore++
+        }
+        else {
+            console.log(roundResult)
+        }
+    }
+
+    if (playerScore > computerScore) {
+         console.log(`You win with a score of ${playerScore}-${computerScore}`)
+    }
+    else if (playerScore < computerScore) {
+        console.log(`You lose with a score of ${playerScore}-${computerScore}`)
+    }
+}
+
+playGame()
