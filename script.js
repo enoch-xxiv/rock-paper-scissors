@@ -31,10 +31,10 @@ function playRound(playerSelection) {
             log.appendChild((roundOutcome.textContent = `You lost this round, ${computerSelection} beats ${playerSelection}!`, roundOutcome));
         }
         else {
-            log.appendChild((roundOutcome.textContent = `It's a`, roundOutcome));
+            log.appendChild((roundOutcome.textContent = `It's a draw!`, roundOutcome));
         }
     }
-    if (playerSelection == "Paper") {
+    else if (playerSelection == "Paper") {
         if (computerSelection == "Rock") {
             playerScore++;
             log.appendChild((roundOutcome.textContent = `You won this round, ${playerSelection} beats ${computerSelection}!`, roundOutcome));
@@ -44,10 +44,10 @@ function playRound(playerSelection) {
             log.appendChild((roundOutcome.textContent = `You lost this round, ${computerSelection} beats ${playerSelection}!`, roundOutcome));
         }
         else {
-            log.appendChild((roundOutcome.textContent = `It's a`, roundOutcome));
+            log.appendChild((roundOutcome.textContent = `It's a draw!`, roundOutcome));
         }
     }
-    if (playerSelection == "Scissors") {
+    else if (playerSelection == "Scissors") {
         if (computerSelection == "Paper") {
             playerScore++;
             log.appendChild((roundOutcome.textContent = `You won this round, ${playerSelection} beats ${computerSelection}!`, roundOutcome));
@@ -57,8 +57,15 @@ function playRound(playerSelection) {
             log.appendChild((roundOutcome.textContent = `You lost this round, ${computerSelection} beats ${playerSelection}!`, roundOutcome));
         }
         else {
-            log.appendChild((roundOutcome.textContent = `It's a`, roundOutcome));
+            log.appendChild((roundOutcome.textContent = `It's a draw!`, roundOutcome));
         }
+    }
+
+    if (playerScore == 5) {
+        log.textContent = `You won!`
+    }
+    else if (computerScore == 5) {
+        log.textContent = `You lost.`
     }
 };
 
